@@ -1,17 +1,20 @@
 # Web Library Hugo Theme
 
+**An example of a site using this theme:** <https://github.com/JessebotX/public-domain-web-library>
+
 A hugo theme for a collection of books.
 
-TODO: Add example site.
-
 ## Features
-* Perfect for a collection of books, whether it's an archive
-  of free/public domain books or web serials
-* Responsive and mobile-friendly
-* Use arrow keys to flip through chapters
-* (WIP) Color scheme toggle for dark/light mode
-* A clean sans-serif Roboto font
-* Uses FontAwesome Free icons
+* Generate a static website for a collection of books,
+  whether it is an archive of free/public domain novels or
+  you're looking to publish some web serials
+* Mobile-first design: site fits on both desktop, mobile and
+  other devices
+* Chapter pagination with keyboard shortcuts
+  * Flip through chapters using your arrow keys
+* Color scheme toggle button at the top of each page
+  * Persistent saving done with localStorage API
+* A clean sans-serif Roboto font used across the website
 
 ## Getting Started
 1. Go into your existing hugo site OR generate a new one
