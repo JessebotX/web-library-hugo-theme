@@ -10,6 +10,8 @@ TODO: Add example site.
 * Responsive and mobile-friendly
 * Use arrow keys to flip through chapters
 * (WIP) Color scheme toggle for dark/light mode
+* A clean sans-serif Roboto font
+* Uses FontAwesome Free icons
 
 ## Getting Started
 1. Go into your existing hugo site OR generate a new one
