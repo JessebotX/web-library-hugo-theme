@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    {{ $sass := resources.Get "scss/styles.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
+    <link rel="stylesheet" href="{{ $sass.RelPermalink }}">
+
+    <title>
+      {{ .Title }}
+      {{ if not $.IsHome -}}
+      | {{ $.Site.Title }}
+      {{- end }}
+    </title>
+  </head>
+
+  <body class="">
+    {{ block "body" . }}
+
+    <nav class="nav">
+      {{ block "navbar" . -}}
+      <a href="/" class="nav-item nav-item__brand">{{ $.Site.Title }}</a>
+      <button class="nav-item nav-item__btn-dark-mode">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+        <span id="color-theme-text">Dark</span> Mode
+      </button>
+      {{- end }}
+    </nav>
+
+    {{ block "main-outer" . -}}
+    <main class="layout-main {{ block "main-class" . }}{{ end }}">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{- end }}
+
+    {{ end }}
+
+    {{ $js := resources.Get "js/script.js" | resources.Fingerprint -}}
+    <script src="{{ $js.RelPermalink }}"></script>
+  </body>
+</html>

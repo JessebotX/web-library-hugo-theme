@@ -1,0 +1,118 @@
+:root {
+  --index-list-item-meta-link-bg-color: #2563eb;
+  --index-list-item-meta-link-bg-color-2: #5b21b6;
+  --index-list-item-meta-link-bg-color-hover: #6b21a8;
+  --index-list-item-meta-link-fg-color: #fff;
+  --index-list-item-meta-link-shadow-hover-color: #777;
+  --index-list-item-cover-shadow-color: #999
+}
+
+.index-list {
+  list-style-type: none;
+  display: grid;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 0;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-gap: 3rem;
+}
+
+@media (min-width: 900px) {
+  .index-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1368px) {
+  .index-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1460px) {
+  .index-list {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.index-list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 490px) {
+  .index-list-item {
+    flex-direction: row;
+  }
+}
+
+.index-list-item-cover {
+  display: block;
+  border-radius: 0.5rem;
+  box-shadow: 0.3rem 0.3rem 0.5rem var(--index-list-item-cover-shadow-color);
+  margin: 0 auto 1rem;
+  max-width: 13rem;
+  height: auto;
+}
+
+@media (min-width: 490px) {
+  .index-list-item-cover {
+    border-radius: 0.5rem;
+    margin: 0;
+    max-width: 13rem;
+    height: auto;
+  }
+}
+
+.index-list-item-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 1rem;
+  width: pxToRem(250);
+}
+
+.index-list-item-meta-title {
+  margin: 0;
+}
+
+.index-list-item-meta-genre {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.index-list-item-meta-author {
+  margin-top: 0.2rem;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.index-list-item-meta-author-name {
+  font-style: oblique;
+  font-size: 1.1rem;
+}
+
+.index-list-item-meta-link {
+  background: linear-gradient(to right, var(--index-list-item-meta-link-bg-color), var(--index-list-item-meta-link-bg-color-2), var(--index-list-item-meta-link-bg-color-hover));
+  background-size: 300% 100%;
+  color: var(--index-list-item-meta-link-fg-color);
+  border-radius: 1rem;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.75rem;
+  transition: 0.05s ease, background-position 0.3s ease;
+
+  &:hover {
+    background-position: 100% 0;
+    box-shadow: 0.1rem 0.1rem 0.3rem var(--index-list-item-meta-link-shadow-hover-color);
+    transform: translateY(-0.1rem);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}

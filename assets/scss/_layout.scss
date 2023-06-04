@@ -1,0 +1,26 @@
+.layout-main {
+  margin: 0 auto;
+  max-width: 90rem;
+}
+
+.layout-main__serial-index {
+  margin: 0 1rem;
+}
+
+@media (min-width: pxToRem(1080)) {
+  .layout-main__serial-index {
+    margin: 0 auto;
+    max-width: 65rem;
+  }
+}
+
+.layout-main__serial-chapter {
+  margin: 0 1rem;
+}
+
+@media (min-width: pxToRem(640)) {
+  .layout-main__serial-chapter {
+    margin: 0 auto;
+    max-width: 65ch;
+  }
+}

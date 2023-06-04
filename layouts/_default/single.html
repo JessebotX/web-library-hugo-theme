@@ -1,0 +1,54 @@
+{{ define  "navbar" }}
+<a href="{{ .Parent.RelPermalink }}" class="nav-item nav-item__brand">{{ .Parent.Title }}</a>
+<button class="nav-item nav-item__btn-dark-mode">
+  <i class="fa-solid fa-circle-half-stroke"></i>
+  <span id="color-theme-text">Dark</span> Mode
+</button>
+{{ end }}
+
+{{ define "main-class" }}layout-main__serial-chapter{{ end }}
+
+{{ define "main" -}}
+
+<section class="serial-chapter-header">
+  <h1 class="serial-chapter-header-title">{{ .Title }}</h1>
+  <a href="{{ .Parent.RelPermalink }}" class="serial-chapter-header-index-btn"><i class="fa-solid fa-list"></i></a>
+</section>
+
+<article class="serial-chapter-contents">
+  {{ .Content }}
+</article>
+
+<section class="serial-chapter-pagination">
+  <a class="serial-chapter-pagination-item serial-chapter-pagination-item__prev
+            {{ with not .NextInSection -}}
+            serial-chapter-pagination-item__disabled
+            {{- end }} "
+     {{ with .NextInSection }}
+     id="prev-chapter-link"
+     href="{{ .RelPermalink }}"
+     title="{{ .Title }}"
+     rel="prev"
+     aria-label="Previous chapter"
+     aria-keyshortcuts="Left"
+     {{ end }}>
+    <i class="fa-solid fa-chevron-left"></i>
+  </a>
+
+  <a class="serial-chapter-pagination-item serial-chapter-pagination-item__next
+            {{ with not .PrevInSection -}}
+            serial-chapter-pagination-item__disabled
+            {{- end }} "
+     {{ with .PrevInSection }}
+     id="next-chapter-link"
+     href="{{ .RelPermalink }}"
+     title="{{ .Title }}"
+     rel="prev"
+     aria-label="Next chapter"
+     aria-keyshortcuts="Right"
+     {{ end }}>
+    <i class="fa-solid fa-chevron-right"></i>
+  </a>
+</section>
+
+{{- end }}

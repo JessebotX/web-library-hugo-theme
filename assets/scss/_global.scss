@@ -1,0 +1,26 @@
+:root {
+  --global-bg-color: #fff;
+  --global-fg-color: #000;
+  --global-font-stack: 'Roboto', 'Helvetica Neue', 'Arial Nova', Helvetica, Arial, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--global-bg-color);
+  color: var(--global-fg-color);
+  font-family: var(--global-font-stack);
+  margin: 0;
+  padding: 0;
+}
+
+.global-font-serif {
+  --global-font-stack: "Source Serif Pro", Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+}
+
+.global-dark-mode {
+  --global-bg-color: #000;
+  --global-fg-color: #fff;
+}

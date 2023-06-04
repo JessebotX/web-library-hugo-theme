@@ -1,0 +1,30 @@
+{{ define "main" }}
+<ul class="index-list">
+  {{ range $.Pages -}}
+  <li class="index-list-item">
+    <img class="index-list-item-cover"
+         src="{{ with .Params.cover -}}
+              {{ . }}
+              {{- else -}}
+              https://placehold.co/400x600
+              {{- end }}">
+
+    <section class="index-list-item-meta">
+      <div>
+        <h2 class="index-list-item-meta-title">{{ .Title }}</h2>
+        {{ if .Params.author -}}
+        <h3 class="index-list-item-meta-author">
+          by <span class="index-list-item-meta-author-name">{{ .Params.author }}</span>
+        </h3>
+        {{- end }}
+        {{ if .Params.genre -}}
+        <h3 class="index-list-item-meta-genre">{{ .Params.genre }}</h3>
+        {{- end }}
+      </div>
+
+      <a href="{{ .RelPermalink }}" class="index-list-item-meta-link">Read</a>
+    </section>
+  </li>
+  {{- end }}
+</ul>
+{{ end }}

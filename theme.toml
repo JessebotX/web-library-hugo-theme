@@ -1,0 +1,12 @@
+name = "Web Library Hugo Theme"
+license = "ISC"
+licenselink = "https://github.com/JessebotX/web-library-hugo-theme/blob/master/LICENSE"
+description = "A Hugo theme for a collection of books and web serials."
+homepage = "https://github.com/JessebotX/web-library-hugo-theme"
+tags = []
+features = []
+min_version = "0.41.0"
+
+[author]
+  name = "Jesse"
+  homepage = "https://github.com/JessebotX"

@@ -1,0 +1,91 @@
+{{ define "main-class" }}layout-main__serial-index{{ end }}
+{{ define "main" -}}
+
+<article class="serial-index-meta">
+  <img class="serial-index-meta-cover"
+       src="{{ with .Params.cover -}}
+            {{ . }}
+            {{- else -}}
+            https://placehold.co/400x600
+            {{- end }}">
+
+  <section class="serial-index-meta-content">
+    <h1 class="serial-index-meta-content-title">{{ .Title }}</h1>
+    {{ if .Params.author }}
+    <h2 class="serial-index-meta-content-author">
+      by <span class="serial-index-meta-content-author-name">{{ .Params.author }}</span>
+    </h2>
+    {{ end }}
+
+    {{ with .Params.tags -}}
+    <ul class="serial-index-meta-content-tags">
+      <span class="serial-index-meta-content-tags-label"><i class="fa-solid fa-bookmark"></i> Tags:</span>
+      {{ range . }}
+      {{ with $.Site.GetPage (printf "/tags/%s" (. | lower | urlize)) }}
+      <li class="serial-index-meta-content-tags-item">
+        {{ .Title }}
+      </li>
+      {{ end }}
+      {{ end }}
+    </ul>
+    {{ end }}
+
+    <article class="serial-index-meta-content-blurb">
+      {{ .Content }}
+    </article>
+  </section>
+</article>
+
+<article class="serial-index-chapters">
+  <ul class="serial-index-chapters-stats">
+    {{ with .Params.status -}}
+    <li class="serial-index-chapters-stats-item">
+      <i class="fa-solid fa-book-open-reader"></i> {{ . }}
+    </li>
+    {{- end }}
+    <li class="serial-index-chapters-stats-item">
+      <i class="fa-solid fa-file"></i>
+      {{ len .Pages }}
+      {{ if not (eq (len .Pages) 1) -}}
+      Chapters
+      {{- else -}}
+      Chapter
+      {{- end }}
+    </li>
+    <li class="serial-index-chapters-stats-item">
+      <a href="./index.xml" class="serial-index-chapters-stats-item-link">
+        <i class="fa-solid fa-rss"></i> Follow RSS Feed for Updates
+      </a>
+    </li>
+  </ul>
+
+  <section class="serial-index-chapters-latest">
+    <span class="serial-index-chapters-latest-label">Read Latest Chapter:</span>
+    {{ range last 1 .Pages }}
+    <a href="{{ .RelPermalink }}" class="serial-index-chapters-latest-link">{{ .Title }}</a>
+    {{ end }}
+  </section>
+
+  <ul class="serial-index-chapters-list">
+    {{ range .Pages -}}
+    <li class="serial-index-chapters-list-item">
+      <a href="{{ .RelPermalink }}" class="serial-index-chapters-list-item-link">
+        <h1 class="serial-index-chapters-list-item-title">
+          {{ if .Draft }}[DRAFT]{{ end }} {{ .Title }}
+        </h1>
+
+        <section class="serial-index-chapters-list-item-info">
+          <span class="serial-index-chapters-list-item-info-reading-time">
+            <i class="fa-solid fa-clock"></i> {{ .ReadingTime }} min
+          </span>
+
+          <span class="serial-index-chapters-list-item-info-date">
+            <i class="fa-solid fa-calendar-days"></i> {{ .Date.Format "Jan 2, 2006" }}
+          </span>
+        </section>
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+</article>
+{{- end }}
