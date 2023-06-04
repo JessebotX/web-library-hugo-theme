@@ -10,6 +10,7 @@ A hugo theme for a collection of books.
   you're looking to publish some web serials
 * Mobile-first design: site fits on both desktop, mobile and
   other devices
+* Link to RSS Feed for each web serial
 * Chapter pagination with keyboard shortcuts
   * Flip through chapters using your arrow keys
 * Color scheme toggle button at the top of each page
