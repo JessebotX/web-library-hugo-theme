@@ -9,6 +9,7 @@
   --serial-index-chapters-list-item-link-shadow-hover-color: #777;
   --serial-index-chapters-latest-link-fg-color: #1d4ed8;
   --serial-index-chapters-list-item-title: #000;
+  --serial-index-meta-contents-blurb-link-fg-color: #1d4ed8;
 }
 
 .global-dark-mode {
@@ -16,6 +17,7 @@
   --serial-index-chapters-list-item-link-shadow-hover-color: #333;
   --serial-index-chapters-stats-item-link-fg-color: #0050ff;
   --serial-index-chapters-latest-link-fg-color: #0050ff;
+  --serial-index-meta-contents-blurb-link-fg-color: #0050ff;
 }
 
 .serial-index-meta {
@@ -102,6 +104,10 @@
 
 .serial-index-meta-content-blurb {
   margin-top: 2rem;
+
+  a {
+    color: var(--serial-index-meta-contents-blurb-link-fg-color)
+  }
 }
 
 .serial-index-chapters {

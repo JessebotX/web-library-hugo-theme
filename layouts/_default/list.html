@@ -80,7 +80,9 @@
           </span>
 
           <span class="serial-index-chapters-list-item-info-date">
+            {{ if .Params.date }}
             <i class="fa-solid fa-calendar-days"></i> {{ .Date.Format "Jan 2, 2006" }}
+            {{ end }}
           </span>
         </section>
       </a>
