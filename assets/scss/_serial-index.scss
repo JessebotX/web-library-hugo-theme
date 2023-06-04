@@ -2,13 +2,20 @@
   --serial-index-meta-cover-shadow-color: #888;
   --serial-index-meta-contents-tags-border-color: #666;
   --serial-index-chapters-stats-item-link-fg-color: #1d4ed8;
-  --serial-index-chapters-stats-item-link-fg-color-hover: #4338ca;
   --serial-index-chapters-list-item-info-fg-color: #333;
   --serial-index-chapters-list-item-link-bg-color: #d4e157;
   --serial-index-chapters-list-item-link-fg-color: #d4e157;
   --serial-index-chapters-list-item-link-bg-color-hover: #cddc39;
   --serial-index-chapters-list-item-link-shadow-hover-color: #777;
   --serial-index-chapters-latest-link-fg-color: #1d4ed8;
+  --serial-index-chapters-list-item-title: #000;
+}
+
+.global-dark-mode {
+  --serial-index-meta-cover-shadow-color: #333;
+  --serial-index-chapters-list-item-link-shadow-hover-color: #333;
+  --serial-index-chapters-stats-item-link-fg-color: #0050ff;
+  --serial-index-chapters-latest-link-fg-color: #0050ff;
 }
 
 .serial-index-meta {
@@ -122,7 +129,6 @@
   text-decoration: none;
 
   &:hover {
-    color: var(--serial-index-chapters-stats-item-link-fg-color-hover);
     text-decoration: underline;
   }
 }
@@ -200,6 +206,7 @@
 }
 
 .serial-index-chapters-list-item-title {
+  color: var(--serial-index-chapters-list-item-title);
   grid-area: title;
   font-weight: normal;
   font-size: 1.2rem;

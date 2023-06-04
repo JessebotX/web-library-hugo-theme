@@ -6,9 +6,18 @@
   --nav-item__btn-dark-mode-shadow-hover-color: #777;
 }
 
+.global-dark-mode {
+  --nav-item__brand-fg-color: #fff;
+  --nav-item__btn-dark-mode-fg-color: #000;
+  --nav-item__btn-dark-mode-bg-color-1: #ddd;
+  --nav-item__btn-dark-mode-bg-color-2: #aaa;
+  --nav-item__btn-dark-mode-shadow-hover-color: #000;
+}
+
 .nav {
   background-color: inherit;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 2rem;

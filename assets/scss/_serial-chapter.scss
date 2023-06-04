@@ -3,6 +3,18 @@
   --serial-chapter-header-index-btn-bg-color-2: #5b21b6;
   --serial-chapter-header-index-btn-fg-color: #fff;
   --serial-chapter-header-index-btn-shadow-hover-color: #777;
+  --serial-chapter-pagination-item-bg-color: rgba(0, 0, 0, 0.1);
+  --serial-chapter-pagination-item-fg-color: #121212;
+  --serial-chapter-pagination-item-bg-hover-color: rgba(0, 0, 0, 0.2);
+  --serial-chapter-pagination-item-shadow-hover-color: #777;
+}
+
+.global-dark-mode {
+  --serial-chapter-pagination-item-fg-color: #777;
+  --serial-chapter-pagination-item-bg-color: rgba(0, 0, 0, 0.3);
+  --serial-chapter-pagination-item-bg-hover-color: rgba(0, 0, 0, 0.5);
+  --serial-chapter-header-index-btn-shadow-hover-color: #222;
+  --serial-chapter-pagination-item-shadow-hover-color: #222;
 }
 
 .serial-chapter-header {
@@ -56,14 +68,14 @@
   display: inline-block;
   padding: 0.75rem 2.5rem;
   margin: 0;
-  background: rgba(0, 0, 0, 0.1);
-  color: #121212;
+  background: var(--serial-chapter-pagination-item-bg-color);
+  color: var(--serial-chapter-pagination-item-fg-color);
   border-radius: 1rem;
   transition: 0.1s ease;
 
   &:hover:not(.serial-chapter-pagination-item__disabled) {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: 0.2rem 0.2rem 0.4rem #777;
+    background: var(--serial-chapter-pagination-item-bg-hover-color);
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--serial-chapter-pagination-item-shadow-hover-color);
     transform: translateY(-0.15rem);
   }
 
@@ -95,7 +107,7 @@
     transition: 0.1s ease;
 
     &:hover:not(.serial-chapter-pagination__disabled) {
-      background: rgba(0, 0, 0, 0.1);
+      background: var(--serial-chapter-pagination-item-bg-hover-color);
       box-shadow: none;
       transform: none;
     }

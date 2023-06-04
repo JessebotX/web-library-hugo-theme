@@ -22,31 +22,45 @@
  *
  */
 
-/* Implement next/prev pagination keybindings for chapter pages */
+const bodyElement = document.querySelector("body")
 
-const serialChapterNextChapterLink = document.querySelector("#next-chapter-link")
-const serialChapterPrevChapterLink = document.querySelector("#prev-chapter-link")
+const main = () => {
+  if (!localStorage.getItem("theme")) {
+    localStorage.setItem("theme", "light")
+  }
 
-if (serialChapterNextChapterLink) {
-  window.addEventListener("keydown", (event) => {
-    event.preventDefault()
+  if (localStorage.getItem("theme") == "dark") {
+    bodyElement.classList.add("global-dark-mode")
+  }
 
-    switch (event.code) {
-    case "ArrowRight":
-      serialChapterNextChapterLink.click()
-      break;
+  document.querySelector("#nav-color-theme-button").addEventListener("click", (event) => {
+    bodyElement.classList.toggle("global-dark-mode")
+
+    if (localStorage.getItem("theme") == "light") {
+      localStorage.setItem("theme", "dark")
+      bodyElement.classList.add("global-dark-mode")
+    } else {
+      localStorage.setItem("theme", "light")
+      bodyElement.classList.remove("global-dark-mode")
     }
   })
+
+  setupPaginationButton(document.querySelector("#next-chapter-link"), "ArrowRight")
+  setupPaginationButton(document.querySelector("#prev-chapter-link"), "ArrowLeft")
 }
 
-if (serialChapterPrevChapterLink) {
-  window.addEventListener("keydown", (event) => {
-    event.preventDefault()
+const setupPaginationButton = (buttonElement, keybindCode) => {
+  if (buttonElement) {
+    window.addEventListener("keydown", (event) => {
+      event.preventDefault()
 
-    switch (event.code) {
-    case "ArrowLeft":
-      serialChapterPrevChapterLink.click()
-      break;
-    }
-  })
+      switch (event.code) {
+      case keybindCode:
+        buttonElement.click()
+        break;
+      }
+    })
+  }
 }
+
+main()

@@ -1,8 +1,8 @@
 {{ define  "navbar" }}
 <a href="{{ .Parent.RelPermalink }}" class="nav-item nav-item__brand">{{ .Parent.Title }}</a>
-<button class="nav-item nav-item__btn-dark-mode">
+<button class="nav-item nav-item__btn-dark-mode" id="nav-color-theme-button">
   <i class="fa-solid fa-circle-half-stroke"></i>
-  <span id="color-theme-text">Dark</span> Mode
+  <span id="nav-color-theme-text">Dark</span> Mode
 </button>
 {{ end }}
 

@@ -4,7 +4,12 @@
   --index-list-item-meta-link-bg-color-hover: #6b21a8;
   --index-list-item-meta-link-fg-color: #fff;
   --index-list-item-meta-link-shadow-hover-color: #777;
-  --index-list-item-cover-shadow-color: #999
+  --index-list-item-cover-shadow-color: #999;
+}
+
+.global-dark-mode {
+  --index-list-item-meta-link-shadow-hover-color: #222;
+  --index-list-item-cover-shadow-color: #222;
 }
 
 .index-list {
@@ -69,8 +74,21 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 1rem;
-  width: pxToRem(250);
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: pxToRem(490)) {
+  .index-list-item-meta {
+    margin-left: 1rem;
+    text-align: left;
+  }
+}
+
+@media (min-width: pxToRem(900)) {
+  .index-list-item-meta {
+    width: pxToRem(250);
+  }
 }
 
 .index-list-item-meta-title {
