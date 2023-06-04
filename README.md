@@ -1,10 +1,15 @@
 # Web Library Hugo Theme
 
+A hugo theme for a collection of books.
+
+![Example Index](previews/desktop-index.png)
+![Example Serial Index](previews/serial-index.png)
+![Example Serial Chapter](previews/serial-chapter.png)
+
+More Previews: See `previews/`
+
 **An example of a site using this theme:** <https://github.com/JessebotX/public-domain-web-library>
 
-![Example](previews/desktop-index.png)
-
-A hugo theme for a collection of books.
 
 ## Features
 * Generate a static website for a collection of books,
