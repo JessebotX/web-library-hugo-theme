@@ -2,6 +2,8 @@
 
 **An example of a site using this theme:** <https://github.com/JessebotX/public-domain-web-library>
 
+![Example](previews/desktop-index.png)
+
 A hugo theme for a collection of books.
 
 ## Features
