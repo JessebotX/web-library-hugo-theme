@@ -23,7 +23,7 @@ More Previews: See `previews/`
 * Color scheme toggle button at the top of each page
   * Persistent saving done with localStorage API
 * A clean sans-serif Roboto font used across the website
-* Minified CSS
+* Minified SCSS output
 
 ## Getting Started
 1. Go into your existing hugo site OR generate a new one
